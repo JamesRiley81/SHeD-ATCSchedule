@@ -1,0 +1,9 @@
+C:\Users\Vestia\Desktop\SHeD Schedule\SHeD Schedule\bin\Debug\netcoreapp1.1\SHeDSchedule.deps.json
+C:\Users\Vestia\Desktop\SHeD Schedule\SHeD Schedule\bin\Debug\netcoreapp1.1\SHeDSchedule.runtimeconfig.json
+C:\Users\Vestia\Desktop\SHeD Schedule\SHeD Schedule\bin\Debug\netcoreapp1.1\SHeDSchedule.runtimeconfig.dev.json
+C:\Users\Vestia\Desktop\SHeD Schedule\SHeD Schedule\bin\Debug\netcoreapp1.1\SHeDSchedule.dll
+C:\Users\Vestia\Desktop\SHeD Schedule\SHeD Schedule\bin\Debug\netcoreapp1.1\SHeDSchedule.pdb
+C:\Users\Vestia\Desktop\SHeD Schedule\SHeD Schedule\obj\Debug\netcoreapp1.1\SHeDSchedule.csprojResolveAssemblyReference.cache
+C:\Users\Vestia\Desktop\SHeD Schedule\SHeD Schedule\obj\Debug\netcoreapp1.1\SHeDSchedule.AssemblyInfo.cs
+C:\Users\Vestia\Desktop\SHeD Schedule\SHeD Schedule\obj\Debug\netcoreapp1.1\SHeDSchedule.dll
+C:\Users\Vestia\Desktop\SHeD Schedule\SHeD Schedule\obj\Debug\netcoreapp1.1\SHeDSchedule.pdb

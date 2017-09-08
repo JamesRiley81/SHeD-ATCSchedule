@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <p class="h3">@ViewBag.Result</p>
+  @using (Html.BeginForm("AddUser", "Home", FormMethod.Post))
+  {
+      @Html.TextBox("UserName", "")
+      @Html.CheckBox("isATC", false)
+      <input type="submit" value="Add Staff" class="btn btn-default"/>
+  }
+</div>
