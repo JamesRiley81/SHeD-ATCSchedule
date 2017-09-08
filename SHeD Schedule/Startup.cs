@@ -30,6 +30,7 @@ namespace SHeD_Schedule
             // Add framework services.
             services.AddMvc();
             services.AddEntityFrameworkSqlite().AddDbContext<AppDbContext>();
+            services.AddTransient<IStaffRepository, StaffRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

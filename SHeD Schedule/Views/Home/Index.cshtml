@@ -1,13 +1,62 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+@model StaffViewModel
 <div>
     <p class="h3">@ViewBag.Result</p>
   @using (Html.BeginForm("AddUser", "Home", FormMethod.Post))
   {
-      @Html.TextBox("UserName", "")
-      @Html.CheckBox("isATC", false)
+    <p>@Html.TextBox("UserName", "")</p>
+     <p>@Html.CheckBox("isATC", false)</p>
       <input type="submit" value="Add Staff" class="btn btn-default"/>
   }
+    @using (Html.BeginForm("GetStudentSchedule", "Home", FormMethod.Post))
+  {
+
+    @Html.DropDownList("studentID", new SelectList(@Model.staff, "staffId", "initials", ""), new { @id = "staffSelect", @onchange = "this.form.submit()" })
+  }
+    <input type="button" value="Delete Staff" class="btn btn-danger" onclick="return removeUser()" />
+    @if(Model.monday != null)
+    {
+        <table>
+            <th colspan="5" class="text-center" style="font-size:15px;">@Model.monday.s.initials</th>
+            <tr><td>@Html.EditorFor(m => @Model.monday.seventhirty)</td><td>@Html.EditorFor(m => @Model.tuesday.seventhirty)</td><td>@Html.EditorFor(m => @Model.wednesday.seventhirty)</td><td>@Html.EditorFor(m => @Model.thursday.seventhirty)</td><td>@Html.EditorFor(m => @Model.friday.seventhirty)</td></tr>
+            <tr><td>@Html.EditorFor(m=>@Model.monday.eight)</td><td>@Html.EditorFor(m=>@Model.tuesday.eight)</td><td>@Html.EditorFor(m =>@Model.wednesday.eight)</td><td>@Html.EditorFor(m=>@Model.thursday.eight)</td><td>@Html.EditorFor(m=>@Model.friday.eight)</td></tr>      
+            <tr><td>@Html.EditorFor(m=>@Model.monday.eightthirty)</td><td>@Html.EditorFor(m=>@Model.tuesday.eightthirty)</td><td>@Html.EditorFor(m=>@Model.wednesday.eightthirty)</td><td>@Html.EditorFor(m =>@Model.thursday.eightthirty)</td><td>@Html.EditorFor(m=>@Model.friday.eightthirty)</td></tr> 
+            <tr><td>@Html.EditorFor(m=>@Model.monday.nine)</td><td>@Html.EditorFor(m=>@Model.tuesday.nine)</td><td>@Html.EditorFor(m=>@Model.wednesday.nine)</td><td>@Html.EditorFor(m=>@Model.thursday.nine)</td><td>@Html.EditorFor(m=>@Model.friday.nine)</td></tr>
+            <tr><td>@Html.EditorFor(m=>@Model.monday.ninethirty)</td><td>@Html.EditorFor(m=>@Model.tuesday.ninethirty)</td><td>@Html.EditorFor(m=>@Model.wednesday.ninethirty)</td><td>@Html.EditorFor(m=>@Model.thursday.ninethirty)</td><td>@Html.EditorFor(m=>@Model.friday.ninethirty)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.ten)</td><td>@Html.EditorFor(m => @Model.tuesday.ten)</td><td>@Html.EditorFor(m => @Model.wednesday.ten)</td><td>@Html.EditorFor(m => @Model.thursday.ten)</td><td>@Html.EditorFor(m => @Model.friday.ten)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.tenthirty)</td><td>@Html.EditorFor(m => @Model.tuesday.tenthirty)</td><td>@Html.EditorFor(m => @Model.wednesday.tenthirty)</td><td>@Html.EditorFor(m => @Model.thursday.tenthirty)</td><td>@Html.EditorFor(m => @Model.friday.tenthirty)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.eleven)</td><td>@Html.EditorFor(m => @Model.tuesday.eleven)</td><td>@Html.EditorFor(m => @Model.wednesday.eleven)</td><td>@Html.EditorFor(m => @Model.thursday.eleven)</td><td>@Html.EditorFor(m => @Model.friday.eleven)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.eleventhirty)</td><td>@Html.EditorFor(m => @Model.tuesday.eleventhirty)</td><td>@Html.EditorFor(m => @Model.wednesday.eleventhirty)</td><td>@Html.EditorFor(m => @Model.thursday.eleventhirty)</td><td>@Html.EditorFor(m => @Model.friday.eleventhirty)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.twelve)</td><td>@Html.EditorFor(m => @Model.tuesday.twelve)</td><td>@Html.EditorFor(m => @Model.wednesday.twelve)</td><td>@Html.EditorFor(m => @Model.thursday.twelve)</td><td>@Html.EditorFor(m => @Model.friday.twelve)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.twelvethirty)</td><td>@Html.EditorFor(m => @Model.tuesday.twelvethirty)</td><td>@Html.EditorFor(m => @Model.wednesday.twelvethirty)</td><td>@Html.EditorFor(m => @Model.thursday.twelvethirty)</td><td>@Html.EditorFor(m => @Model.friday.twelvethirty)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.one)</td><td>@Html.EditorFor(m => @Model.tuesday.one)</td><td>@Html.EditorFor(m => @Model.wednesday.one)</td><td>@Html.EditorFor(m => @Model.thursday.one)</td><td>@Html.EditorFor(m => @Model.friday.one)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.onethirty)</td><td>@Html.EditorFor(m => @Model.tuesday.onethirty)</td><td>@Html.EditorFor(m => @Model.wednesday.onethirty)</td><td>@Html.EditorFor(m => @Model.thursday.onethirty)</td><td>@Html.EditorFor(m => @Model.friday.onethirty)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.two)</td><td>@Html.EditorFor(m => @Model.tuesday.two)</td><td>@Html.EditorFor(m => @Model.wednesday.two)</td><td>@Html.EditorFor(m => @Model.thursday.two)</td><td>@Html.EditorFor(m => @Model.friday.two)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.twothirty)</td><td>@Html.EditorFor(m => @Model.tuesday.twothirty)</td><td>@Html.EditorFor(m => @Model.wednesday.twothirty)</td><td>@Html.EditorFor(m => @Model.thursday.twothirty)</td><td>@Html.EditorFor(m => @Model.friday.twothirty)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.three)</td><td>@Html.EditorFor(m => @Model.tuesday.three)</td><td>@Html.EditorFor(m => @Model.wednesday.three)</td><td>@Html.EditorFor(m => @Model.thursday.three)</td><td>@Html.EditorFor(m => @Model.friday.three)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.threethirty)</td><td>@Html.EditorFor(m => @Model.tuesday.threethirty)</td><td>@Html.EditorFor(m => @Model.wednesday.threethirty)</td><td>@Html.EditorFor(m => @Model.thursday.threethirty)</td><td>@Html.EditorFor(m => @Model.friday.threethirty)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.four)</td><td>@Html.EditorFor(m => @Model.tuesday.four)</td><td>@Html.EditorFor(m => @Model.wednesday.four)</td><td>@Html.EditorFor(m => @Model.thursday.four)</td><td>@Html.EditorFor(m => @Model.friday.four)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.fourthirty)</td><td>@Html.EditorFor(m => @Model.tuesday.fourthirty)</td><td>@Html.EditorFor(m => @Model.wednesday.fourthirty)</td><td>@Html.EditorFor(m => @Model.thursday.fourthirty)</td><td>@Html.EditorFor(m => @Model.friday.fourthirty)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.five)</td><td>@Html.EditorFor(m => @Model.tuesday.five)</td><td>@Html.EditorFor(m => @Model.wednesday.five)</td><td>@Html.EditorFor(m => @Model.thursday.five)</td><td>@Html.EditorFor(m => @Model.friday.five)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.fivethirty)</td><td>@Html.EditorFor(m => @Model.tuesday.fivethirty)</td><td>@Html.EditorFor(m => @Model.wednesday.fivethirty)</td><td>@Html.EditorFor(m => @Model.thursday.fivethirty)</td><td>@Html.EditorFor(m => @Model.friday.fivethirty)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.six)</td><td>@Html.EditorFor(m => @Model.tuesday.six)</td><td>@Html.EditorFor(m => @Model.wednesday.six)</td><td>@Html.EditorFor(m => @Model.thursday.six)</td><td>@Html.EditorFor(m => @Model.friday.six)</td></tr>
+            <tr><td>@Html.EditorFor(m => @Model.monday.sixthirty)</td><td>@Html.EditorFor(m => @Model.tuesday.sixthirty)</td><td>@Html.EditorFor(m => @Model.wednesday.sixthirty)</td><td>@Html.EditorFor(m => @Model.thursday.sixthirty)</td><td>@Html.EditorFor(m => @Model.friday.sixthirty)</td></tr>
+        </table>
+
+    }
 </div>
+<script>
+    function removeUser() {
+        var user = $('#staffSelect :selected').val();      
+        if (user === "")
+        {
+            return false;
+        }
+        else {
+            var url = '@Html.Raw(Url.Action("Removeuser", "Home"))'
+            window.location.href = url + "?staffid=" + user;
+        }
+    }
+</script>

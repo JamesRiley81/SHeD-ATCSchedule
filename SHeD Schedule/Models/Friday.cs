@@ -33,5 +33,31 @@ namespace SHeDSchedule.Models
         public char fivethirty { get; set; }
         public char six { get; set; }
         public char sixthirty { get; set; }
+        public Friday()
+        {
+            seventhirty = 'X';
+            eight = 'X';
+            eightthirty = 'X';
+            nine = 'X';
+            ninethirty = 'X';
+            ten = 'X';
+            tenthirty = 'X';
+            eleven = 'X';
+            eleventhirty = 'X';
+            twelve = 'X';
+            twelvethirty = 'X';
+            one = 'X';
+            onethirty = 'X';
+            two = 'X';
+            twothirty = 'X';
+            three = 'X';
+            threethirty = 'X';
+            four = 'X';
+            fourthirty = 'X';
+            five = 'X';
+            fivethirty = 'X';
+            six = 'X';
+            sixthirty = 'X';
+        }
     }
 }
